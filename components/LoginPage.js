@@ -206,8 +206,11 @@ const LoginPage = () => {
                             {error && (
                                 <Alert variant="destructive" className="mb-4">
                                     <AlertCircle className="h-4 w-4" />
-                                    <AlertDescription>{error}</AlertDescription>
+                                    <AlertDescription>
+                                        {error.replace(/'/g, '&#39;')}
+                                    </AlertDescription>
                                 </Alert>
+
                             )}
 
                             <div className="space-y-2">
@@ -269,9 +272,10 @@ const LoginPage = () => {
                                     `Sign in as ${userType === "applicant"
                                         ? "Job Applicant"
                                         : "HR Professional"
-                                    }`
+                                        }`.replace(/'/g, '&#39;')
                                 )}
                             </Button>
+
 
                             <div className="text-center space-y-2">
                                 <Button
@@ -281,7 +285,7 @@ const LoginPage = () => {
                                     Forgot password?
                                 </Button>
                                 <div className="text-sm text-black">
-                                    Don't have an account?{" "}
+                                    Don&#39;t have an account?{" "}
                                     <Button
                                         variant="link"
                                         className="p-0 text-blue-600 dark:text-blue-400"
@@ -290,6 +294,7 @@ const LoginPage = () => {
                                         Sign up
                                     </Button>
                                 </div>
+
                             </div>
                         </form>
                     </CardContent>

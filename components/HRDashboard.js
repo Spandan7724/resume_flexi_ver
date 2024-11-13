@@ -13,11 +13,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import {
-    MessageSquare,
     Users,
     Briefcase,
     TrendingUp,
-    ChevronLeft,
     MapPin,
     Star,
 } from 'lucide-react';
@@ -64,7 +62,7 @@ const HRDashboard = () => {
                 } else {
                     throw new Error(data.error);
                 }
-            } catch (err) {
+            } catch {
                 setError('Failed to load job postings.');
             } finally {
                 setLoading(false);
@@ -84,7 +82,7 @@ const HRDashboard = () => {
                 } else {
                     throw new Error(data.error);
                 }
-            } catch (err) {
+            } catch {
                 setError('Failed to load job postings.');
             } finally {
                 setLoading(false);

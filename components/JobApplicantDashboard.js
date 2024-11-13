@@ -34,16 +34,15 @@ import {
   Building2,
   DollarSign,
   ChevronLeft,
-  Upload,
 } from 'lucide-react';
 
 const JobApplicantDashboard = () => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  
   const [locationFilter, setLocationFilter] = useState('all');
   const [departmentFilter, setDepartmentFilter] = useState('all');
-  const [resumeFile, setResumeFile] = useState(null); 
     // Sample job postings data
   const [jobPostings, setJobPostings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -79,13 +78,6 @@ const JobApplicantDashboard = () => {
     );
   }
 
-    const handleFileUpload = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            setResumeFile(file);
-            alert(`Resume uploaded: ${file.name}`);
-        }
-    };
 
   const filteredJobs = jobPostings.filter((job) => {
     const matchesSearch =
