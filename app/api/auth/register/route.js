@@ -1,7 +1,7 @@
 // app/api/auth/register/route.js
 
 import dbConnect from '@/lib/dbConnect';
-import getUserModel from '@/app/models/User';
+import getUserModel from '@/models/User';
 import bcrypt from 'bcryptjs';
 
 export async function POST(request) {
